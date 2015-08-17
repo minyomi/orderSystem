@@ -1,0 +1,235 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ page import="java.util.*" %> 
+<%@ page import="cn.mos1.bean.*" %> 
+ <!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <title>后台管理系统</title>
+
+-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/bootstrap-responsive.min.css" rel="stylesheet" />
+    
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" />
+    <link href="./css/font-awesome.css" rel="stylesheet" />
+    
+    <link href="./css/adminia.css" rel="stylesheet" /> 
+    <link href="./css/adminia-responsive.css" rel="stylesheet" /> 
+    
+    <link href="./css/pages/dashboard.css" rel="stylesheet" /> 
+    
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+
+	<body>
+	
+<div class="navbar navbar-fixed-top">
+	
+	<div class="navbar-inner">
+		
+		<div class="container">
+			
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 				
+			</a>
+			
+			<a class="brand" href="./">后台管理系统</a>
+			
+			<div class="nav-collapse">
+			
+				<ul class="nav pull-right">
+				
+					<li class="divider-vertical"></li>
+					
+					<li class="dropdown">
+						
+						<a data-toggle="dropdown" class="dropdown-toggle " href="#">
+							Username <b class="caret"></b>							
+						</a>
+						
+						<ul class="dropdown-menu">
+							<li>
+								<a href="System_Set.jsp"><i class="icon-user"></i> 用户设置</a>
+							</li>
+							
+							<li>
+								<a href="Change_User.jsp"><i class="icon-lock"></i> 修改密码</a>
+							</li>
+							
+							<li class="divider"></li>
+							
+							<li>
+								<a href="System_Login.jsp"><i class="icon-off"></i>退出登录</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				
+			</div> <!-- /nav-collapse -->
+			
+		</div> <!-- /container -->
+		
+	</div> <!-- /navbar-inner -->
+	
+</div> <!-- /navbar -->
+<div id="content">	
+	<div class="container">
+		<div class="row">			
+			<div class="span3">								
+				<ul id="main-nav" class="nav nav-tabs nav-stacked">					
+					<li class="active">
+						<a href="User_index.jsp">
+							<i class="icon-home"></i>
+							主界面	
+						</a>
+					</li>					
+					<li class="active">
+						<a href="#">
+							<i class="icon-user"></i>
+							用户管理	
+						</a>
+					</li>	
+                         <li>
+						<a href="Add_User.jsp">
+							<i class="icon-minus"></i>
+							添加用户
+						
+						</a>
+					</li>	
+                        <li>
+						<a href="Show_User.jsp">
+							<i class="icon-minus"></i>
+							查看用户列表
+						
+						</a>
+					</li>						
+					<li class="active">
+						<a href="#">
+							<i class="icon-th-large"></i>
+							餐饮店管理
+						
+						</a>
+					</li>	
+   <li>
+						<a href="Add_RestUsername.jsp">
+							<i class="icon-minus"></i>
+							添加账号
+						
+						</a>
+					</li>	   <li>
+						<a href="Show_RestUsername.jsp">
+							<i class="icon-minus"></i>
+							查看账号列表
+						
+						</a>
+					</li>	   <li>
+						<a href="Show_Restaurant.jsp">
+							<i class="icon-minus"></i>
+							查看餐饮店列表
+						
+						</a>
+					</li>						
+					<li>
+						<a href="Restaurant_Login.jsp">
+							<i class="icon-lock"></i>
+							进入电子菜单管理系统
+							</a>
+					</li>
+				</ul>					
+				<hr />								
+				<br />
+		
+			</div> <!-- /span3 -->
+			
+			
+			
+		    	<div class="span9">
+				
+				<h1 class="page-title">
+					<i class="icon-user"></i>
+					修改餐饮店信息					
+				</h1>
+				
+				<div class="stat-container">										
+			
+		
+				
+						
+							<div class="tab-content">
+								<div class="tab-pane active" id="1">
+								<form id="edit-profile" class="form-horizontal" />
+									
+										<div class="control-group">											
+											<label class="control-label" >餐饮店名</label>
+											<div class="controls">
+												<input type="text" class="input-medium " id=e" name="name"/></div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+										
+										<div class="control-group">											
+											<label class="control-label">餐饮店地址</label>
+											<div class="controls">
+												<input type="text" class="input-medium " id="" name="" /></div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+										
+										<div class="control-group">											
+											<label class="control-label" for="">其他信息</label>
+											<div class="controls">
+												<input type="text" class="input-medium " id="" name="" /></div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+										
+	
+										<div class="form-actions">
+											<button type="submit" class="btn btn-primary">保存</button> 
+											<button class="btn">取消</button>
+										</div> <!-- /form-actions -->
+							
+								</div>
+								
+							</div>
+						  
+						  
+						</div>
+										
+					
+				</div> <!-- /stat	-container -->
+			
+					
+				
+			    </div> <!-- /span9 -->
+			
+			
+		       </div> <!-- /row -->
+		
+            	</div> <!-- /container -->
+	
+               </div> <!-- /content -->
+					
+	
+
+
+
+    
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./js/jquery-1.7.2.min.js"></script>
+<script src="./js/excanvas.min.js"></script>
+<script src="./js/jquery.flot.js"></script>
+<script src="./js/jquery.flot.pie.js"></script>
+<script src="./js/jquery.flot.orderBars.js"></script>
+<script src="./js/jquery.flot.resize.js"></script>
+
+
+<script src="./js/bootstrap.js"></script>
+<script src="./js/charts/bar.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,66 @@
+package cn.mos1.servlet.system;
+import java.io.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import cn.mos1.bean.DataSourceBean;
+import cn.mos1.bean.RestaurantAccount;
+
+public class CheckUersList extends GenericServlet{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public void service(ServletRequest request, ServletResponse response)
+			throws ServletException, IOException {
+		HttpServletRequest req=(HttpServletRequest)request;
+		HttpServletResponse resp=(HttpServletResponse)response;
+		resp.setContentType("text/html;charset=GBK");
+		DataSourceBean ds=new DataSourceBean();
+		//int id=0;
+		//String s=req.getParameter("id");
+		//id=Integer.parseInt(s);
+		String sql="select id,username,password from system_account"; //where system_account_id='"+id+"'";
+		ResultSet rs=ds.executeQuery(sql);
+	    List<RestaurantAccount> res_accounts=new LinkedList<RestaurantAccount>();
+	    try {
+			while(rs.next()){
+				RestaurantAccount res_account=new RestaurantAccount();
+				res_account.setId(rs.getInt(1));
+				res_account.setUsername(rs.getString(2));
+				res_account.setPassword(rs.getString(3));
+				res_accounts.add(res_account);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    req.setAttribute("res_accounts", res_accounts);
+	    GoToPage("RestaurantAccountList1.jsp", req, resp);
+	    try {
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    rs=null;
+	    ds.closeConnection();
+	    }
+
+	
+	public void GoToPage(String url, HttpServletRequest request, HttpServletResponse response)
+	{
+		RequestDispatcher rd=null;
+		rd=request.getRequestDispatcher(url);
+		
+		try {
+			rd.forward(request, response);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}	
+	}
+	
